@@ -1,68 +1,67 @@
 # BrokerCatalogDotNet
 
-## Visão Geral do Projeto
+## Overview
 
-O **BrokerCatalogDotNet** é uma aplicação web simples desenvolvida em **.NET 9.0** que funciona como um catálogo de corretoras. O projeto utiliza o framework ASP.NET Core para o *backend* (API) e uma interface *frontend* minimalista em HTML, CSS e JavaScript para consumir e exibir os dados.
+BrokerCatalogDotNet is a simple web application developed in .NET 9.0 that functions as a broker catalog. The project uses the ASP.NET Core framework for the backend (API) and a minimalist frontend interface in HTML, CSS, and JavaScript to consume and display data.
 
-A funcionalidade principal é a exposição de um *endpoint* `/corretoras` que retorna uma lista de corretoras, que é então carregada e exibida dinamicamente na página inicial.
+The main functionality is the exposure of an `/brokers` endpoint that returns a list of brokers, which is then loaded and displayed dynamically on the home page.
 
-## Instalação
+## Installation
 
-Para executar este projeto localmente, você precisará ter o SDK do .NET 9.0 instalado em sua máquina.
+To run this project locally, you will need to have the .NET 9.0 SDK installed on your machine.
 
-### Pré-requisitos
+### Preconditions
 
 *   [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 
-### Passos para Instalação
+### Instalations steps
 
-1.  **Clone o repositório:**
+1.  **Clone the repository:**
     ```bash
     git clone [URL_DO_SEU_REPOSITORIO]
     cd BrokerCatalogDotNet
     ```
 
-2.  **Execute a aplicação:**
-    Navegue até o diretório raiz do projeto (onde está o arquivo `BrokerCatalogDotNet.csproj`) e execute o comando:
+2.  **Execute the aplication:**
+    Navigate to the project's root directory (where the `BrokerCatalogDotNet.csproj` file is located) and run the command:
     ```bash
     dotnet run
     ```
 
-3.  **Acesse a aplicação:**
-    A aplicação será iniciada e estará acessível em `http://localhost:5000` ou `http://localhost:5001` (HTTPS), conforme configurado pelo ASP.NET Core.
+3.  **Acess the aplication:**
+    The application will start and be accessible at `http://localhost:xxxx`(HTTPS), as configured by ASP.NET Core.
 
-## Uso
+## Usage
 
-Após iniciar a aplicação, siga os passos abaixo:
+After launching the application, follow the steps below:
 
-1.  Abra seu navegador e acesse o endereço local (ex: `http://localhost:5000`).
-2.  A página inicial (`index.html`) será carregada.
-3.  Clique no botão **"Carregar lista"**.
-4.  O *script* JavaScript (`script.js`) fará uma requisição ao *endpoint* `/corretoras` do *backend*.
-5.  A lista de corretoras (Nome Social, Município e CNPJ) será exibida dinamicamente na tela.
+1.  Open your browser and go to the local address (ex: `http://localhost:5287`).
+2.  The home page (`index.html`) will load.
+3. Click on the **“Load list”** button.
+4. The JavaScript script (`script.js`) will make a request to the `/brokers` endpoint of the backend.
+5. The list of brokers (Company Name, City, and CNPJ) will be dynamically displayed on the screen.
 
-## Descrição do Código
+## Code description
 
-O projeto é estruturado em duas partes principais: o *Backend* em C# (.NET) e o *Frontend* em tecnologias web padrão.
+The project is structured in two main parts: the *Backend* in C# (.NET) and the *Frontend* in standard web technologies.
 
 ### Backend (C# / .NET 9.0)
 
-| Arquivo | Descrição |
+| File | Description |
 | :--- | :--- |
-| `BrokerCatalogDotNet.csproj` | Define o projeto como uma aplicação web ASP.NET Core, utilizando o *target framework* `net9.0`. |
-| `Program.cs` | **Ponto de entrada da aplicação.** Configura o *pipeline* HTTP do ASP.NET Core. É responsável por: <ul><li>Configurar o servidor web.</li><li>Servir arquivos estáticos (HTML, CSS, JS) da pasta `wwwroot`.</li><li>Definir o *endpoint* `/corretoras` que retorna os dados das corretoras em formato JSON.</li></ul> |
-| `appsettings.json` | Arquivo de configuração padrão do ASP.NET Core, definindo configurações de *logging* e *hosts* permitidos. |
+| `BrokerCatalogDotNet.csproj` | Defines the project as an ASP.NET Core web application, using the *target framework* `net9.0`. |
+| `Program.cs` |**Application entry point.** Configures the ASP.NET Core HTTP pipeline. It is responsible for: <ul><li>Configuring the web server. </li><li>Defining the `/brokers` endpoint that returns broker data in JSON format. </li></ul> |
+| `appsettings.json` | Default ASP.NET Core configuration file, defining logging settings and allowed hosts. |
+**Endpoint Strucutr `/corretoras`:**
 
-**Estrutura do Endpoint `/corretoras`:**
-
-O *endpoint* é configurado para retornar uma lista de objetos JSON. Cada objeto representa uma corretora e contém os campos `nome_social`, `municipio` e `cnpj`.
+The endpoint is configured to return a list of JSON objects. Each object represents a broker and contains the fields `nome_social`, `municipio` and `cnpj`.
 
 ### Frontend (HTML, CSS, JavaScript)
 
-| Arquivo | Descrição |
+| File | Description |
 | :--- | :--- |
-| `index.html` | A página principal da aplicação. Contém a estrutura básica, o título, o botão **"Carregar lista"** e o elemento `<ul>` com o ID `Brokerlist` onde a lista de corretoras será injetada. |
-| `script.js` | Contém a lógica de interação. A função `carregarLista()` utiliza a API `fetch` para buscar os dados do *endpoint* `/corretoras` e manipula o DOM para criar e exibir a lista de corretoras na página. |
-| `style.css` | Arquivo de estilos para o layout da página, incluindo a formatação da lista de corretoras e do cabeçalho. |
+| `index.html` | The application's main page. Contains the basic structure, title, **“Load list”** button, and the `<ul>` element with the ID `Brokerlist` where the list of brokers will be injected. |
+| `script.js` | Contains the interaction logic. The `loadList()` function uses the `fetch` API to retrieve data from the `/brokers` endpoint and manipulates the DOM to create and display the list of brokers on the page. |
+| `style.css` | Style file for the page layout, including the formatting of the list of brokers and the header. |
 
 ---
