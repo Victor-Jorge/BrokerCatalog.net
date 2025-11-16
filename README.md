@@ -18,7 +18,7 @@ To run this project locally, you will need to have the .NET 9.0 SDK installed on
 
 1.  **Clone the repository:**
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO]
+    git clone [[URL_DO_SEU_REPOSITORIO]](https://github.com/Victor-Jorge/BrokerCatalog.net.git)
     cd BrokerCatalogDotNet
     ```
 
