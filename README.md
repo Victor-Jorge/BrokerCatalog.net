@@ -6,6 +6,8 @@ BrokerCatalogDotNet is a simple web application developed in .NET 9.0 that funct
 
 The main functionality is the exposure of an `/brokers` endpoint that returns a list of brokers, which is then loaded and displayed dynamically on the home page.
 
+<img src="assets/Gravando Catalog-Broker.net.gif">
+
 ## Installation
 
 To run this project locally, you will need to have the .NET 9.0 SDK installed on your machine.
@@ -52,7 +54,7 @@ The project is structured in two main parts: the *Backend* in C# (.NET) and the 
 | `BrokerCatalogDotNet.csproj` | Defines the project as an ASP.NET Core web application, using the *target framework* `net9.0`. |
 | `Program.cs` |**Application entry point.** Configures the ASP.NET Core HTTP pipeline. It is responsible for: <ul><li>Configuring the web server. </li><li>Defining the `/brokers` endpoint that returns broker data in JSON format. </li></ul> |
 | `appsettings.json` | Default ASP.NET Core configuration file, defining logging settings and allowed hosts. |
-**Endpoint Strucutr `/corretoras`:**
+**Endpoint Structure `/corretoras`:**
 
 The endpoint is configured to return a list of JSON objects. Each object represents a broker and contains the fields `nome_social`, `municipio` and `cnpj`.
 
