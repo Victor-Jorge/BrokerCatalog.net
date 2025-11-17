@@ -68,3 +68,5 @@ The endpoint is configured to return a list of JSON objects. Each object represe
 | `style.css` | Style file for the page layout, including the formatting of the list of brokers and the header. |
 
 ---
+
+## Upcoming updates will focus on implementing the Model and Controller layers, along with database integration.
